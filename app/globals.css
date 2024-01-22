@@ -1,0 +1,381 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 31.8% 91.4%;
+    --input: 260 100% 91.4%;
+    --ring: 260 84% 98%;
+
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 221, 39.29%, 10.98%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 260 30% 50%;
+  }
+}
+
+@layer utilities {
+  .shadow-custom {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+                rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+                rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+                rgba(0, 0, 0, 0.06) 0px 2px 1px,
+                rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                rgba(0, 0, 0, 0.09) 0px 8px 4px,
+                rgba(0, 0, 0, 0.09) 0px 16px 8px,
+                rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.button-dark-theme {
+  padding: 0px 12px;
+  transition: 0.3s;
+  
+  position: relative;
+  box-shadow: 1px 1px 5px rgb(124, 124, 124) !important;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.button-dark-theme:hover {
+  
+  border: transparent;
+  color: rgb(255, 119, 8) !important;
+}
+
+.button-dark-theme::before {
+  content: "";
+  position: absolute;
+  border-radius: 6px;
+  background: #1f1f1f;
+}
+
+.button-dark-theme span {
+  position: relative;
+  z-index: 1;
+}
+
+.triggerMenu {
+  outline: none;
+  border-radius: 50%;
+  transition: scale 0.6s ease;
+  box-shadow: 2px 1px 5px rgb(80, 80, 80) !important;
+}
+.drop-content {
+  border-radius: 6px;
+  border: none;
+  letter-spacing: 1.2px;
+
+  font-weight: 500;
+  cursor: pointer !important;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 6px 10px -3px,
+    rgba(58, 58, 58, 0.158) 0px -3px 0px inset !important;
+}
+.drop-content-menu {
+  font-size: 12px !important;
+  letter-spacing: 1.2px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.drop-content-menu:hover {
+  color: rgb(253, 123, 36) !important;
+}
+.drop-menu {
+  border-radius: 6px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 6px 10px -3px,
+    rgba(58, 58, 58, 0.158) 0px -3px 0px inset !important;
+}
+
+.drop-menu-item:hover {
+  color: rgb(253, 123, 36) !important;
+}
+.drop-menu-item {
+  letter-spacing: 1.2px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer !important;
+}
+
+/*     SIGN IN       */
+
+.button-signIn {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
+  border-radius: 6px;
+  position: relative;
+  font-size: 13px;
+  box-shadow: 2px 2px 5px rgb(124, 124, 124) !important;
+  border: none !important;
+  transition: color 0.3s ease;
+}
+
+.button-signIn:hover {
+  border-radius: 6px;
+  border: transparent !important;
+  color: rgb(255, 119, 8) !important;
+}
+
+.button-signIn::before {
+  content: "";
+  position: absolute;
+  border-radius: 6px;
+  background: #222222;
+}
+
+.button-signIn span {
+  position: relative;
+  z-index: 1;
+}
+
+.button-signIn i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.button-signIn i::before {
+  content: "";
+  position: absolute;
+  border: 2px solid rgb(255, 119, 8);
+  width: 10px;
+  height: 4px;
+  top: -3.5px;
+  left: 80%;
+  background: #222222;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.button-signIn:hover i::before {
+  width: 20px;
+  left: 20%;
+}
+
+.button-signIn i::after {
+  content: "";
+  position: absolute;
+  border: 2px solid rgb(255, 119, 8);
+  width: 10px;
+  height: 4px;
+  bottom: -3.5px;
+  left: 20%;
+  background: #222222;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.button-signIn:hover i::after {
+  width: 20px;
+  left: 80%;
+}
+
+/*        HOVER PRICING HOME **********   */
+
+.btn-pricing {
+
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.btn-pricing:focus,
+.btn-pricing:hover {
+  color: rgb(155, 154, 154);
+}
+
+.btn-pricing:focus:after,
+.btn-pricing:hover:after {
+  width: 85%;
+  left: 0%;
+}
+
+.btn-pricing:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(165, 163, 163);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+/* ********** BUTTON GET STARTED ********** */
+
+.button-getStarted {
+  --green: #fd9b1b;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(
+    to right,
+    rgba(253, 142, 16, 0.1) 1%,
+    transparent 40%,
+    transparent 60%,
+    rgba(253, 163, 27, 0.267) 100%
+  );
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(255, 130, 13, 0.4),
+    0 0 9px 3px rgba(230, 142, 10, 0.1);
+}
+
+.button-getStarted:hover {
+  color: #ff821c;
+  box-shadow: inset 0 0 10px rgba(196, 134, 19, 0.6),
+    0 0 9px 3px rgba(253, 155, 27, 0.2);
+}
+
+.button-getStarted:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 10em;
+  height: 100%;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
+  background: linear-gradient(
+    to right,
+    transparent 1%,
+    rgba(253, 163, 27, 0.445) 40%,
+    rgba(253, 148, 27, 0.185) 60%,
+    transparent 100%
+  );
+}
+
+.button-getStarted:hover:before {
+  transform: translateX(15em);
+}
+
+
+/*             CARD PRICE     */
+
+.card-price {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.233);
+  border: 2px solid rgba(255, 255, 255, 0.671);
+  width: 400px;
+  padding: 20px;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.name-card-price {
+  font-size: 30px;
+  color: #ff821c;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-family: "Noto Sans";
+}
+
+.upgrade-container {
+  height: 40px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.281);
+
+  font-size: 15px;
+  letter-spacing: 1.2px;
+}
+
+.upgrade-container:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.281);
+  box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.479) !important;
+}
+
+
+
+
+@font-face {
+  font-family: "sobread";
+  src: url('/public/fonts/Sobread-ALnD7.otf') format("opentype")
+       url('/public/fonts/Sobread-qZvnV.ttf') format('truetype');
+       font-weight: 400;
+       font-style: normal;
+  }
